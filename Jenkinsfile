@@ -14,5 +14,11 @@ pipeline{
                 git branch: 'master', url: 'https://github.com/edmondgodwin/e2e-pipeline.git'
             }
         }
+
+        stage("Build Application"){
+            steps{
+                sh mvn clean package
+            }
+        }
     }
 }
