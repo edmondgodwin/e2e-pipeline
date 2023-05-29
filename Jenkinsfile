@@ -40,5 +40,13 @@ pipeline{
                 }
             }   
         }
+
+        stage("SonarQube Analysis"){
+            steps{
+                script {
+                    waitForQualityGate abortPipeline: false, credentialsId: 'sonar-token'
+                }
+            }   
+        }
     }
 }
