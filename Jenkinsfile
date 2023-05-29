@@ -13,7 +13,7 @@ pipeline{
         DOCKER_PASS = 'docker-pass'
         IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
-        
+    }    
     stages{
         stage("Clean Workspace"){
             steps{
