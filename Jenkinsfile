@@ -2,10 +2,10 @@ pipeline{
     agent{
         label "agent-node"
     }
-    // tools{
-    //     jdk 'java17'
-    //     maven 'maven3'
-    // }
+    tools{
+        jdk 'java17'
+        maven 'maven3'
+    }
     // environment {
     //     APP_NAME = "complete-e2e-pipeline"
     //     RELEASE = "1.0.0"
@@ -27,17 +27,17 @@ pipeline{
             }
         }
 
-        // stage("Build Application"){
-        //     steps{
-        //         sh "mvn clean package"
-        //     }
-        // }
+        stage("Build Application"){
+            steps{
+                sh "mvn clean package"
+            }
+        }
 
-        // stage("Test Application"){
-        //     steps{
-        //         sh "mvn test"
-        //     }
-        // }
+        stage("Test Application"){
+            steps{
+                sh "mvn test"
+            }
+        }
 
         // stage("SonarQube Analysis"){
         //     steps{
